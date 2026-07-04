@@ -3,929 +3,987 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Dental Sapphire — Aesthetic, Orthodontic & Implant Dentistry · Karachi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Sky Heaven Ball Room — North Nazimabad, Karachi</title>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============ THEME TOKENS ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --font-display:'Fraunces',serif;
-  --font-body:'Manrope',sans-serif;
-  --radius:14px;
-  --facet:polygon(8% 0,92% 0,100% 22%,100% 78%,92% 100%,8% 100%,0 78%,0 22%);
+  --sky:      #EEF3FF;
+  --sky2:     #D8E6FF;
+  --dusk:     #1A1035;
+  --dusk2:    #120C2A;
+  --dusk3:    #0D0820;
+  --violet:   #7B5EA7;
+  --violet2:  #A07ED4;
+  --lavender: #C4A8E8;
+  --blush:    #F0D8FF;
+  --rose:     #F5C0D8;
+  --sunrise:  #F7C87A;
+  --sunrise2: #FAE0A8;
+  --white:    #FFFFFF;
+  --muted:    rgba(196,168,232,0.55);
 }
-[data-theme="sapphire"]{
-  --bg:#0B2A44; --bg-soft:#0F3557; --surface:#123f66; --surface2:#153f66;
-  --text:#F4F1EA; --text-dim:#B9C6D6;
-  --accent:#2C86C4; --accent2:#8FD1E8;
-  --gold:#D4AF6A; --line:rgba(244,241,234,.14);
-  --glow:radial-gradient(circle,#2C86C4,transparent 70%);
+html{scroll-behavior:smooth}
+body{font-family:'Josefin Sans',sans-serif;background:var(--dusk);color:var(--sky);overflow-x:hidden}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--dusk3)}
+::-webkit-scrollbar-thumb{background:var(--violet2);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 5rem;transition:all 0.5s ease;
 }
-[data-theme="pearl"]{
-  --bg:#FAF7F1; --bg-soft:#F1EADC; --surface:#FFFFFF; --surface2:#F4EFE4;
-  --text:#132335; --text-dim:#5B6B7C;
-  --accent:#1B5D8C; --accent2:#0E3A5C;
-  --gold:#B4863B; --line:rgba(19,35,53,.12);
-  --glow:radial-gradient(circle,#1B5D8C,transparent 70%);
+nav.scrolled{
+  background:rgba(18,12,42,0.97);backdrop-filter:blur(20px);
+  padding:1rem 5rem;border-bottom:1px solid rgba(160,126,212,0.15);
 }
-[data-theme="amethyst"]{
-  --bg:#241638; --bg-soft:#2E1D46; --surface:#33204F; --surface2:#38234F;
-  --text:#F2E9F7; --text-dim:#C7B4D8;
-  --accent:#9B6BD6; --accent2:#E6B8E0;
-  --gold:#D9A85C; --line:rgba(242,233,247,.14);
-  --glow:radial-gradient(circle,#9B6BD6,transparent 70%);
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.55rem;font-weight:300;letter-spacing:0.12em;
+  color:var(--white);text-decoration:none;display:flex;flex-direction:column;
 }
-[data-theme="ruby"]{
-  --bg:#2B1416; --bg-soft:#3A1B1E; --surface:#3E1E21; --surface2:#43242A;
-  --text:#F7ECE9; --text-dim:#D9B6B4;
-  --accent:#C4573C; --accent2:#E6A15E;
-  --gold:#D4954C; --line:rgba(247,236,233,.14);
-  --glow:radial-gradient(circle,#C4573C,transparent 70%);
+.nav-logo-top{display:flex;align-items:center;gap:0.5rem}
+.nav-logo-icon{font-size:1rem}
+.nav-logo-sub{font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--lavender);opacity:0.75;margin-top:0.1rem}
+.nav-links{display:flex;gap:2.8rem;list-style:none}
+.nav-links a{
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--sky2);text-decoration:none;opacity:0.6;
+  transition:opacity 0.3s,color 0.3s;position:relative;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg); color:var(--text); font-family:var(--font-body);
-  transition:background .4s ease,color .4s ease; overflow-x:hidden;
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--lavender);transition:width 0.3s}
+.nav-links a:hover{opacity:1;color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;
+  border:1px solid rgba(160,126,212,0.45);color:var(--lavender);
+  padding:0.7rem 1.8rem;text-decoration:none;
+  transition:all 0.4s;position:relative;overflow:hidden;
 }
-h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; line-height:1.1;}
-a{color:inherit; text-decoration:none;}
-img{max-width:100%; display:block;}
-.wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
-.eyebrow{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); font-weight:700;}
-.section{padding:110px 0;}
-.section-head{max-width:640px; margin-bottom:56px;}
-.section-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:10px;}
-.section-head p{color:var(--text-dim); margin-top:14px; font-size:1.05rem; line-height:1.6;}
-.btn{
-  display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:999px;
-  font-weight:700; font-size:.92rem; cursor:pointer; border:1px solid transparent; position:relative; overflow:hidden;
+.nav-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--violet),var(--violet2));transform:translateX(-101%);transition:transform 0.4s cubic-bezier(0.77,0,0.18,1)}
+.nav-cta:hover{color:var(--white)}
+.nav-cta:hover::before{transform:translateX(0)}
+.nav-cta span{position:relative;z-index:1}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:300}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--lavender);transition:all 0.35s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:150;
+  background:rgba(13,8,32,0.98);backdrop-filter:blur(24px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+  transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.77,0,0.18,1);pointer-events:none;
 }
-.btn-primary{background:var(--accent); color:#08121c;}
-[data-theme="pearl"] .btn-primary{color:#fff;}
-.btn-ghost{border-color:var(--line); background:transparent; color:var(--text);}
-.btn:focus-visible{outline:2px solid var(--accent2); outline-offset:3px;}
-.ripple{position:absolute; border-radius:50%; background:rgba(255,255,255,.5); transform:scale(0); animation:ripple .6s linear; pointer-events:none;}
-@keyframes ripple{to{transform:scale(3); opacity:0;}}
-.facet{clip-path:var(--facet);}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms !important; transition-duration:.001ms !important;}}
-
-/* ---- progress + scrolltop ---- */
-#progress{position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--gold)); width:0%; z-index:999;}
-#toTop{
-  position:fixed; bottom:96px; right:24px; width:44px; height:44px; border-radius:50%;
-  background:var(--surface); border:1px solid var(--line); color:var(--text); display:none;
-  align-items:center; justify-content:center; cursor:pointer; z-index:900; font-size:1.1rem;
+.mobile-menu.open{transform:translateX(0);pointer-events:all}
+.mobile-menu a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:300;color:var(--sky);text-decoration:none;
+  opacity:0;transform:translateY(20px);transition:color 0.3s,opacity 0.4s,transform 0.4s;
 }
-#toTop.show{display:flex;}
+.mobile-menu.open a{opacity:1;transform:translateY(0)}
+.mobile-menu.open a:nth-child(1){transition-delay:0.1s}
+.mobile-menu.open a:nth-child(2){transition-delay:0.17s}
+.mobile-menu.open a:nth-child(3){transition-delay:0.24s}
+.mobile-menu.open a:nth-child(4){transition-delay:0.31s}
+.mobile-menu.open a:nth-child(5){transition-delay:0.38s}
+.mobile-menu a:hover{color:var(--lavender)}
+.mobile-menu-cta{
+  font-size:0.72rem !important;letter-spacing:0.28em !important;
+  text-transform:uppercase;font-family:'Josefin Sans',sans-serif !important;
+  border:1px solid rgba(160,126,212,0.45) !important;
+  padding:1rem 2.8rem !important;color:var(--lavender) !important;
+}
 
-/* ---- nav ---- */
-header{position:fixed; top:0; left:0; right:0; z-index:950; backdrop-filter:blur(14px); background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--line);}
-nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1180px; margin:0 auto;}
-.logo{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:1.15rem;}
-.logo-mark{width:34px; height:34px; background:conic-gradient(from 45deg,var(--accent),var(--gold),var(--accent2),var(--accent)); clip-path:var(--facet); display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#0B2A44; font-weight:800;}
-.navlinks{display:flex; gap:28px; font-size:.92rem; font-weight:600;}
-.navlinks a{color:var(--text-dim); position:relative; padding:4px 0;}
-.navlinks a.active,.navlinks a:hover{color:var(--text);}
-.navlinks a.active::after{content:''; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:var(--gold);}
-.navright{display:flex; align-items:center; gap:14px;}
-.theme-switch{display:flex; gap:6px; background:var(--surface); padding:5px; border-radius:999px; border:1px solid var(--line);}
-.theme-dot{width:20px; height:20px; border-radius:50%; cursor:pointer; border:2px solid transparent;}
-.theme-dot.active{border-color:var(--text);}
-.theme-dot[data-t="sapphire"]{background:#2C86C4;}
-.theme-dot[data-t="pearl"]{background:#E9E1CF;}
-.theme-dot[data-t="amethyst"]{background:#9B6BD6;}
-.theme-dot[data-t="ruby"]{background:#C4573C;}
-.hamburger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
-.hamburger span{width:24px; height:2px; background:var(--text);}
-.drawer{position:fixed; top:0; right:-320px; width:290px; height:100%; background:var(--surface); z-index:1001; padding:90px 26px; transition:right .35s ease; border-left:1px solid var(--line);}
-.drawer.open{right:0;}
-.drawer a{display:block; padding:14px 0; border-bottom:1px solid var(--line); font-weight:600;}
-.drawer-close{position:absolute; top:24px; right:24px; font-size:1.4rem; background:none; border:none; color:var(--text); cursor:pointer;}
+/* ── HERO ── */
+.hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 
-/* ---- hero ---- */
-#hero{position:relative; padding:150px 0 90px; overflow:hidden;}
-.hero-bg{position:absolute; inset:0; z-index:0; opacity:.55; background:var(--glow); filter:blur(60px); transition:transform .1s ease;}
-.hero-grid{position:absolute; inset:0; background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:44px 44px; mask-image:radial-gradient(circle at 30% 30%,#000,transparent 70%); opacity:.5;}
-.hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center;}
-.hero-copy h1{font-size:clamp(2.3rem,4.6vw,3.6rem); margin:16px 0 20px;}
-.hero-copy p{color:var(--text-dim); font-size:1.08rem; max-width:520px; line-height:1.65; margin-bottom:32px;}
-.hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px;}
-.hero-stats{display:flex; gap:16px; flex-wrap:wrap;}
-.hstat{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px 20px; min-width:140px;}
-.hstat b{font-family:var(--font-display); font-size:1.5rem; display:block;}
-.hstat span{font-size:.78rem; color:var(--text-dim);}
-.hero-visual{position:relative;}
-.hero-card{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:24px; box-shadow:0 30px 60px -20px rgba(0,0,0,.5);}
-.hero-card .tag{display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:700; background:var(--bg-soft); padding:5px 10px; border-radius:999px; color:var(--gold);}
-.hero-card .dot{width:7px; height:7px; border-radius:50%; background:#3ddc84; box-shadow:0 0 0 4px rgba(61,220,132,.2);}
-.chat-sim{margin-top:16px; display:flex; flex-direction:column; gap:10px;}
-.bubble{padding:10px 14px; border-radius:14px; font-size:.85rem; max-width:80%;}
-.bubble.them{background:var(--bg-soft); align-self:flex-start;}
-.bubble.me{background:var(--accent); color:#08121c; align-self:flex-end;}
-[data-theme="pearl"] .bubble.me{color:#fff;}
-.floaty{position:absolute; background:var(--surface); border:1px solid var(--line); padding:10px 14px; border-radius:12px; font-size:.78rem; font-weight:700; box-shadow:0 12px 30px -10px rgba(0,0,0,.4); animation:float 4s ease-in-out infinite;}
-.f1{top:-18px; right:20px;} .f2{bottom:-16px; left:-10px; animation-delay:1s;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+/* gradient sky background — no reliance on external image for bg */
+.hero-skygrad{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    #0D0820 0%,
+    #1A1035 20%,
+    #2A1A50 40%,
+    #3D2265 55%,
+    #5C3080 65%,
+    #8B5090 75%,
+    #C4707A 85%,
+    #E89060 92%,
+    #F5C87A 100%
+  );
+  opacity:0.55;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789204953-media.webp');
+  background-size:cover;background-position:center;
+  animation:heroZoom 20s ease-in-out infinite alternate;
+  filter:brightness(0.22) saturate(0.5);
+}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.12) translateX(-1%)}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,rgba(13,8,32,0.7) 0%,rgba(13,8,32,0) 25%,rgba(13,8,32,0) 55%,rgba(13,8,32,1) 100%),
+    radial-gradient(ellipse at 50% 40%,rgba(123,94,167,0.25) 0%,transparent 65%);
+}
 
-/* ---- marquee ---- */
-.marquee{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-soft); padding:14px 0; overflow:hidden; white-space:nowrap;}
-.marquee-track{display:inline-flex; gap:40px; animation:scroll 32s linear infinite; font-weight:700; font-size:.85rem; letter-spacing:.04em; text-transform:uppercase; color:var(--text-dim);}
-.marquee-track span{opacity:.85;}
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+/* floating clouds */
+.clouds{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.cloud{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,var(--op,0.03));
+  filter:blur(60px);
+  animation:cloudDrift var(--d,30s) var(--delay,0s) linear infinite;
+}
+@keyframes cloudDrift{from{transform:translateX(-150px)}to{transform:translateX(calc(100vw + 150px))}}
 
-/* ---- stat band ---- */
-.statband{padding:70px 0; border-bottom:1px solid var(--line);}
-.statband .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;}
-.statband b{font-family:var(--font-display); font-size:2.4rem; color:var(--accent);}
-.statband span{display:block; margin-top:6px; color:var(--text-dim); font-size:.85rem;}
+/* star dots */
+.stars-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.star-dot{
+  position:absolute;border-radius:50%;
+  background:var(--white);opacity:0;
+  animation:starTwink var(--d,3s) var(--delay,0s) ease-in-out infinite;
+}
+@keyframes starTwink{0%,100%{opacity:0;transform:scale(0.6)}50%{opacity:var(--op,0.8);transform:scale(1)}}
 
-/* ---- cards grids ---- */
-.grid6{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px; transition:transform .25s ease, box-shadow .25s ease;}
-.card:hover{transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(0,0,0,.5);}
-.card .ico{width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:var(--bg-soft); border-radius:10px; font-size:1.3rem; margin-bottom:16px;}
-.card h4{font-size:1.08rem; margin-bottom:8px;}
-.card p{color:var(--text-dim); font-size:.9rem; line-height:1.55;}
+/* glass lifts decorative element */
+.hero-lift{
+  position:absolute;right:8%;top:50%;transform:translateY(-50%);
+  display:flex;gap:12px;opacity:0.12;pointer-events:none;
+}
+.lift-shaft{
+  width:18px;height:160px;
+  border:1px solid var(--lavender);border-radius:2px;
+  position:relative;
+}
+.lift-cabin{
+  position:absolute;width:14px;height:28px;
+  background:rgba(196,168,232,0.3);border-radius:1px;
+  left:1px;
+  animation:liftMove var(--d,4s) var(--delay,0s) ease-in-out infinite alternate;
+}
+@keyframes liftMove{from{top:4px}to{top:calc(100% - 32px)}}
 
-/* ---- programs ---- */
-.prog-wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.prog{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:30px; display:flex; flex-direction:column;}
-.prog.pop{border-color:var(--gold);}
-.badge-pop{position:absolute; top:-12px; right:24px; background:var(--gold); color:#241638; font-size:.7rem; font-weight:800; padding:5px 12px; border-radius:999px;}
-.prog .emoji{font-size:2rem; margin-bottom:10px;}
-.prog h3{font-size:1.3rem; margin-bottom:4px;}
-.prog .meta{color:var(--gold); font-size:.8rem; font-weight:700; margin-bottom:14px;}
-.prog ul{margin:14px 0 22px; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:9px;}
-.prog li{font-size:.87rem; color:var(--text-dim); display:flex; gap:8px;}
-.prog li::before{content:'◆'; color:var(--accent); font-size:.6rem; margin-top:5px;}
-.prog .btn{margin-top:auto; justify-content:center;}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 2rem;max-width:980px}
+.hero-pre{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:1.8rem}
+.hero-pre-line{width:45px;height:1px;background:linear-gradient(to right,transparent,var(--lavender))}
+.hero-pre-line.r{background:linear-gradient(to left,transparent,var(--lavender))}
+.hero-pre-text{font-size:0.58rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--lavender);opacity:0.85}
 
-/* ---- steps ---- */
-.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
-.step{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px; position:relative;}
-.step .num{font-family:var(--font-display); font-size:2rem; color:var(--accent); opacity:.5;}
-.step h4{margin:10px 0 6px;}
-.step p{color:var(--text-dim); font-size:.87rem;}
+.hero-cloud-icon{font-size:2.8rem;display:block;margin-bottom:0.8rem;animation:floatIcon 4s ease-in-out infinite}
+@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-/* ---- journey / curriculum ---- */
-.tabbar{display:flex; gap:10px; margin-bottom:28px; flex-wrap:wrap;}
-.tabbtn{padding:10px 20px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font-weight:700; font-size:.85rem; cursor:pointer; color:var(--text-dim);}
-.tabbtn.active{background:var(--accent); color:#08121c; border-color:var(--accent);}
-[data-theme="pearl"] .tabbtn.active{color:#fff;}
-.tabpanel{display:none;}
-.tabpanel.active{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
-.chapter{display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px 16px;}
-.chapter .n{font-family:var(--font-display); color:var(--gold); font-weight:700; min-width:24px;}
-.chapter span{font-size:.9rem;}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.8rem,9vw,8rem);
+  font-weight:300;line-height:0.95;color:var(--white);
+  text-shadow:0 0 80px rgba(160,126,212,0.5),0 4px 40px rgba(0,0,0,0.7);
+  margin-bottom:0.3rem;
+}
+.hero-title-glow{
+  display:block;font-style:italic;
+  background:linear-gradient(135deg,var(--blush),var(--lavender),var(--sunrise2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-size:clamp(4.2rem,10vw,9rem);
+  filter:drop-shadow(0 0 30px rgba(196,168,232,0.5));
+}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.8rem 0}
+.hero-divider-line{width:70px;height:1px;background:linear-gradient(to right,transparent,rgba(196,168,232,0.4))}
+.hero-divider-line.r{background:linear-gradient(to left,transparent,rgba(196,168,232,0.4))}
+.hero-divider-gem{
+  width:8px;height:8px;background:var(--lavender);transform:rotate(45deg);
+  box-shadow:0 0 14px var(--lavender),0 0 28px rgba(196,168,232,0.4);
+}
+.hero-sub{
+  font-size:0.82rem;letter-spacing:0.1em;color:var(--sky2);
+  opacity:0.65;margin-bottom:3rem;line-height:2.1;
+  max-width:500px;margin-left:auto;margin-right:auto;
+}
+.hero-btns{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
 
-/* ---- certificates ---- */
-.cert-wrap{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; align-items:start;}
-.cert-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
-.cert-card h4{margin-bottom:14px;}
-.cert-card ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
-.cert-card li{font-size:.87rem; color:var(--text-dim); display:flex; gap:8px;}
-.cert-card li::before{content:'✓'; color:var(--accent2); font-weight:800;}
-.cert-preview{background:linear-gradient(135deg,var(--bg-soft),var(--surface)); border:1px solid var(--gold); border-radius:16px; padding:30px; text-align:center; position:relative;}
-.cert-preview .seal{width:64px; height:64px; margin:0 auto 12px; background:conic-gradient(from 0deg,var(--gold),var(--accent),var(--gold)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem;}
-.cert-preview small{color:var(--text-dim); display:block; margin-top:10px; font-size:.75rem;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  background:linear-gradient(135deg,var(--violet),var(--violet2));
+  color:var(--white);font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;
+  padding:1.1rem 3rem;text-decoration:none;font-weight:600;
+  transition:all 0.4s;box-shadow:0 8px 32px rgba(123,94,167,0.4);
+  position:relative;overflow:hidden;
+}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--violet2),var(--blush) 80%);opacity:0;transition:opacity 0.4s}
+.btn-primary:hover{box-shadow:0 12px 48px rgba(160,126,212,0.6);transform:translateY(-2px)}
+.btn-primary:hover::after{opacity:1}
+.btn-primary span{position:relative;z-index:1;color:var(--dusk)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  border:1px solid rgba(196,168,232,0.35);color:var(--lavender);
+  font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;
+  padding:1.1rem 3rem;text-decoration:none;transition:all 0.4s;backdrop-filter:blur(4px);
+}
+.btn-ghost:hover{border-color:var(--lavender);background:rgba(196,168,232,0.08);transform:translateY(-2px)}
 
-/* ---- chatbot section ---- */
-.chatbox{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:0; overflow:hidden; display:grid; grid-template-columns:280px 1fr;}
-.chat-side{background:var(--bg-soft); padding:24px; border-right:1px solid var(--line);}
-.chat-side h4{margin-bottom:14px; font-size:1rem;}
-.sugg{display:block; width:100%; text-align:left; background:var(--surface); border:1px solid var(--line); color:var(--text); padding:10px 12px; border-radius:10px; margin-bottom:8px; font-size:.82rem; cursor:pointer;}
-.sugg:hover{border-color:var(--accent);}
-.chat-main{display:flex; flex-direction:column; height:460px;}
-.chat-log{flex:1; overflow-y:auto; padding:22px; display:flex; flex-direction:column; gap:12px;}
-.chat-log .bubble{max-width:75%;}
-.chat-inputbar{display:flex; gap:10px; padding:16px; border-top:1px solid var(--line);}
-.chat-inputbar input{flex:1; background:var(--bg-soft); border:1px solid var(--line); border-radius:999px; padding:12px 18px; color:var(--text); font-family:var(--font-body);}
-.chat-inputbar button{background:var(--accent); border:none; color:#08121c; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:1.1rem;}
-[data-theme="pearl"] .chat-inputbar button{color:#fff;}
-.chat-actions{display:flex; gap:10px; padding:0 16px 16px;}
-.chat-actions .btn{flex:1; justify-content:center; font-size:.8rem; padding:10px;}
-.chat-disclaimer{padding:10px 22px; font-size:.72rem; color:var(--text-dim); border-top:1px solid var(--line);}
+.hero-scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0.6rem;
+  animation:scrollBob 2.5s ease-in-out infinite;
+}
+@keyframes scrollBob{0%,100%{opacity:0.3;transform:translateX(-50%) translateY(0)}50%{opacity:0.7;transform:translateX(-50%) translateY(7px)}}
+.hero-scroll-text{font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--lavender)}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--lavender),transparent)}
 
-/* ---- safety ---- */
-.safety-wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:start;}
-.safe-item{display:flex; gap:16px; margin-bottom:26px;}
-.safe-item .ico{width:40px; height:40px; flex-shrink:0; background:var(--surface); border:1px solid var(--line); border-radius:10px; display:flex; align-items:center; justify-content:center;}
-.safe-item h4{margin-bottom:5px;}
-.safe-item p{color:var(--text-dim); font-size:.88rem;}
-.safe-card{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:30px;}
-.badges2{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px;}
-.badge2{background:var(--bg-soft); border-radius:10px; padding:12px; text-align:center; font-size:.78rem; font-weight:700;}
+/* ── SECTIONS ── */
+section{padding:8rem 6rem}
+.eyebrow{font-size:0.6rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--lavender);display:block;margin-bottom:1.2rem}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;line-height:1.05;
+  color:var(--white);margin-bottom:1.8rem;
+}
+.section-title em{font-style:italic;color:var(--lavender)}
+.section-body{font-size:0.85rem;line-height:2.1;color:var(--muted);max-width:480px}
 
-/* ---- testimonials ---- */
-.tgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-.tcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
-.stars{color:var(--gold); letter-spacing:2px; margin-bottom:12px;}
-.tcard p{font-size:.92rem; color:var(--text-dim); line-height:1.6; margin-bottom:18px;}
-.tperson{display:flex; align-items:center; gap:12px;}
-.avatar{width:40px; height:40px; border-radius:50%; background:var(--glow); clip-path:var(--facet); display:flex; align-items:center; justify-content:center; font-weight:800; font-family:var(--font-display);}
-.tperson b{display:block; font-size:.88rem;}
-.tperson span{font-size:.75rem; color:var(--text-dim);}
+/* ── ABOUT ── */
+.about{background:var(--dusk2);display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.about-visual{position:relative;min-height:660px;overflow:hidden}
+.about-img-fill{
+  position:absolute;inset:0;
+  background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789206302-media.webp');
+  background-size:cover;background-position:center;transition:transform 0.8s ease;
+}
+.about-visual:hover .about-img-fill{transform:scale(1.04)}
+.about-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(18,12,42,0) 0%,rgba(18,12,42,0.88) 100%);
+}
+.about-badge{
+  position:absolute;bottom:2.5rem;right:-1.5rem;
+  background:linear-gradient(135deg,var(--violet),var(--lavender));
+  color:var(--white);padding:1.8rem 2rem;
+  font-family:'Cormorant Garamond',serif;
+  box-shadow:0 20px 60px rgba(123,94,167,0.45);text-align:center;z-index:5;
+}
+.about-badge-num{font-size:2.5rem;font-weight:300;line-height:1;display:block}
+.about-badge-label{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;margin-top:0.4rem;display:block;font-family:'Josefin Sans',sans-serif;opacity:0.85}
+.about-accent-img{
+  position:absolute;bottom:0;left:-2rem;width:44%;aspect-ratio:3/4;overflow:hidden;
+  border:3px solid var(--dusk2);box-shadow:0 20px 60px rgba(0,0,0,0.7);
+}
+.about-accent-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+.about-text{padding:7rem 5rem;display:flex;flex-direction:column;justify-content:center;gap:2.2rem;background:var(--dusk2)}
+.about-text .section-body{max-width:100%}
+.stats-row{display:flex;gap:3rem;margin-top:0.5rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:0.4rem;position:relative;padding-left:1.2rem}
+.stat::before{content:'';position:absolute;left:0;top:0.3rem;width:2px;height:calc(100% - 0.6rem);background:var(--lavender);opacity:0.4}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--lavender);line-height:1}
+.stat-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;opacity:0.5}
 
-/* ---- pricing ---- */
-.pgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-.pcard{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:30px; text-align:center; position:relative;}
-.pcard.pop{border-color:var(--gold);}
-.pcard .price{font-family:var(--font-display); font-size:2.2rem; margin:14px 0 4px;}
-.pcard .price small{font-size:.9rem; color:var(--text-dim); font-weight:400;}
-.pcard ul{list-style:none; text-align:left; margin:20px 0; display:flex; flex-direction:column; gap:9px;}
-.pcard li{font-size:.85rem; color:var(--text-dim);}
-.pcard li::before{content:'✓ '; color:var(--accent2); font-weight:800;}
-.pricenote{text-align:center; color:var(--text-dim); font-size:.85rem; margin-top:20px;}
+/* ── SPECIALITIES ── */
+.specialities{background:var(--dusk3);padding:8rem 6rem}
+.spec-header{text-align:center;margin-bottom:5rem}
+.spec-header .section-body{margin:1rem auto 0;text-align:center}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(160,126,212,0.08);max-width:1200px;margin:0 auto}
+.spec-card{
+  background:var(--dusk3);padding:3.2rem 2.5rem;
+  position:relative;overflow:hidden;transition:background 0.4s;
+}
+.spec-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--violet2),transparent);
+  transform:scaleX(0);transform-origin:center;transition:transform 0.5s;
+}
+.spec-card:hover{background:rgba(123,94,167,0.07)}
+.spec-card:hover::after{transform:scaleX(1)}
+.spec-icon-box{
+  width:50px;height:50px;margin-bottom:1.6rem;
+  border:1px solid rgba(160,126,212,0.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color 0.4s,background 0.4s,box-shadow 0.4s;
+}
+.spec-card:hover .spec-icon-box{border-color:rgba(160,126,212,0.5);background:rgba(123,94,167,0.1);box-shadow:0 0 18px rgba(123,94,167,0.2)}
+.spec-icon{font-size:1.3rem}
+.spec-num{font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.22em;color:var(--lavender);opacity:0.4;display:block;margin-bottom:0.5rem}
+.spec-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--white);margin-bottom:0.9rem}
+.spec-desc{font-size:0.78rem;line-height:1.95;color:var(--muted)}
 
-/* ---- faq ---- */
-.faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
-.faq-q{display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:700; font-size:1rem;}
-.faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease; color:var(--text-dim); font-size:.9rem; line-height:1.6;}
-.faq-item.open .faq-a{max-height:200px; margin-top:12px;}
-.faq-q .plus{transition:transform .3s ease; color:var(--accent);}
-.faq-item.open .plus{transform:rotate(45deg);}
+/* ── GALLERY ── */
+.gallery{background:var(--dusk2);padding:8rem 6rem}
+.gallery-header{margin-bottom:4rem}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  grid-template-rows:300px 240px;gap:8px;max-width:1300px;margin:0 auto 3rem;
+}
+.g-item{overflow:hidden;position:relative;cursor:pointer}
+.g-item img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+  transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s;
+  filter:brightness(0.72) saturate(0.75);
+}
+.g-item:hover img{transform:scale(1.07);filter:brightness(1) saturate(1)}
+.g-item-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,8,32,0.85) 0%,rgba(13,8,32,0) 50%);
+  opacity:0;transition:opacity 0.5s;
+  display:flex;align-items:flex-end;padding:1.5rem;
+}
+.g-item:hover .g-item-overlay{opacity:1}
+.g-item-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--lavender);border-bottom:1px solid rgba(196,168,232,0.4);padding-bottom:0.3rem}
+.g1{grid-column:span 5;grid-row:span 2}
+.g2{grid-column:span 4}.g3{grid-column:span 3}
+.g4{grid-column:span 7}.g5{grid-column:span 5}
+.gallery-cta{text-align:center}
 
-/* ---- contact ---- */
-.contact-wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:48px;}
-.cinfo-item{display:flex; gap:14px; margin-bottom:22px;}
-.cinfo-item .ico{width:38px; height:38px; background:var(--surface); border:1px solid var(--line); border-radius:9px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-.cinfo-item span{color:var(--text-dim); font-size:.88rem;}
-.form{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:30px; display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-.form .full{grid-column:1/-1;}
-.form label{font-size:.8rem; font-weight:700; margin-bottom:6px; display:block; color:var(--text-dim);}
-.form input,.form select,.form textarea{width:100%; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:11px 14px; color:var(--text); font-family:var(--font-body);}
-.form textarea{resize:vertical; min-height:80px;}
-.form .btn{width:100%; justify-content:center;}
+/* ── OCCASIONS ── */
+.occasions{background:var(--dusk);padding:0}
+.occasions-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.occasion-card{position:relative;overflow:hidden;height:560px;cursor:pointer}
+.occasion-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.28) saturate(0.5);transition:filter 0.6s,transform 0.8s}
+.occasion-card:hover .occasion-bg{filter:brightness(0.45) saturate(0.75);transform:scale(1.05)}
+.occasion-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,8,32,0.97) 0%,rgba(13,8,32,0.3) 60%,rgba(13,8,32,0) 100%)}
+.occasion-shimmer{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--lavender),transparent);transform:scaleX(0);transform-origin:center;transition:transform 0.5s}
+.occasion-card:hover .occasion-shimmer{transform:scaleX(1)}
+.occasion-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;transition:padding 0.4s}
+.occasion-card:hover .occasion-content{padding-bottom:3.5rem}
+.occasion-icon{font-size:2rem;display:block;margin-bottom:1rem;filter:drop-shadow(0 0 10px var(--lavender));transform:translateY(8px);transition:transform 0.4s}
+.occasion-card:hover .occasion-icon{transform:translateY(0)}
+.occasion-num{font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--lavender);opacity:0.6;margin-bottom:0.5rem;display:block}
+.occasion-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.occasion-divider{width:30px;height:1px;background:var(--lavender);margin:0.8rem 0;opacity:0.5;transform:scaleX(0);transform-origin:left;transition:transform 0.4s 0.1s}
+.occasion-card:hover .occasion-divider{transform:scaleX(1)}
+.occasion-desc{font-size:0.78rem;line-height:1.9;color:var(--muted);max-height:0;overflow:hidden;opacity:0;transition:max-height 0.5s,opacity 0.4s}
+.occasion-card:hover .occasion-desc{max-height:100px;opacity:1}
 
-/* ---- cta band ---- */
-.ctaband{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:80px 0; text-align:center;}
-.ctaband h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:14px;}
-.ctaband p{color:var(--text-dim); margin-bottom:30px;}
-.ctaband .btnrow{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+/* ── LIFT FEATURE STRIP ── */
+.lift-strip{
+  background:var(--dusk2);
+  padding:5rem 6rem;
+  display:flex;align-items:center;justify-content:center;gap:6rem;flex-wrap:wrap;
+  border-top:1px solid rgba(160,126,212,0.08);
+  border-bottom:1px solid rgba(160,126,212,0.08);
+  position:relative;overflow:hidden;
+}
+.lift-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(123,94,167,0.07) 0%,transparent 65%);pointer-events:none}
+.lift-item{text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.8rem;position:relative;z-index:1}
+.lift-item-icon{font-size:2rem;filter:drop-shadow(0 0 10px rgba(196,168,232,0.4))}
+.lift-item-label{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--lavender);opacity:0.7}
+.lift-item-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--white)}
 
-/* ---- footer ---- */
-footer{padding:70px 0 30px;}
-.fgrid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px;}
-.fcol h5{font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:16px; color:var(--gold);}
-.fcol a{display:block; color:var(--text-dim); font-size:.88rem; margin-bottom:10px;}
-.fbrand p{color:var(--text-dim); font-size:.88rem; margin:14px 0 18px; max-width:280px;}
-.socials{display:flex; gap:10px;}
-.socials a{width:36px; height:36px; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center;}
-.fbottom{border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.78rem; color:var(--text-dim);}
-.fbottom .links{display:flex; gap:18px;}
-.demo-note{background:var(--bg-soft); border:1px dashed var(--line); border-radius:10px; padding:14px 18px; font-size:.78rem; color:var(--text-dim); margin-bottom:30px;}
+/* ── QUOTE ── */
+.quote-band{
+  background:var(--dusk3);padding:7rem 6rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.quote-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(123,94,167,0.1) 0%,transparent 65%)}
+.quote-mark{font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:0.5;color:var(--lavender);opacity:0.12;display:block;margin-bottom:1rem}
+.quote-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3.2vw,2.8rem);font-style:italic;font-weight:300;
+  color:var(--white);max-width:760px;margin:0 auto 1.5rem;line-height:1.6;
+  position:relative;z-index:1;
+  text-shadow:0 0 40px rgba(196,168,232,0.2);
+}
+.quote-source{font-size:0.6rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--lavender);opacity:0.65}
 
-/* ---- whatsapp fab ---- */
-#waFab{position:fixed; bottom:24px; right:24px; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; z-index:900; box-shadow:0 10px 26px -8px rgba(0,0,0,.5); font-size:1.6rem;}
+/* ── CTA ── */
+.cta-full{position:relative;overflow:hidden;padding:10rem 6rem;text-align:center}
+.cta-bg{
+  position:absolute;inset:0;
+  background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789204953-media.webp');
+  background-size:cover;background-position:center;
+  filter:brightness(0.15) saturate(0.4);transform:scale(1.04);
+}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,8,32,0.75),rgba(13,8,32,0.35),rgba(13,8,32,0.8))}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(123,94,167,0.3) 0%,transparent 65%);pointer-events:none}
+.cta-content{position:relative;z-index:2}
+.cta-eyebrow{font-size:0.6rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--lavender);display:block;margin-bottom:1.5rem}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:1rem;text-shadow:0 0 60px rgba(196,168,232,0.3)}
+.cta-title em{font-style:italic;color:var(--lavender)}
+.cta-sub{font-size:0.82rem;opacity:0.55;margin-bottom:3rem;letter-spacing:0.08em;color:var(--sky2)}
+.cta-btns{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
 
-/* ---- reveal ---- */
-.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
-.reveal.in{opacity:1; transform:translateY(0);}
+/* ── CONTACT ── */
+.contact{background:var(--dusk2);display:grid;grid-template-columns:1fr 1.2fr;gap:0;align-items:stretch}
+.contact-left{
+  padding:7rem 5rem;background:var(--dusk3);
+  display:flex;flex-direction:column;gap:2.5rem;justify-content:center;
+  border-right:1px solid rgba(160,126,212,0.08);position:relative;overflow:hidden;
+}
+.contact-left::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(123,94,167,0.1) 0%,transparent 70%);pointer-events:none}
+.contact-info-item{display:flex;flex-direction:column;gap:0.4rem;padding:1.8rem 0;border-bottom:1px solid rgba(160,126,212,0.08)}
+.contact-info-item:last-of-type{border-bottom:none}
+.contact-label{font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--lavender);opacity:0.7;margin-bottom:0.3rem}
+.contact-val{font-size:0.88rem;line-height:1.8;opacity:0.8}
+.contact-val a{color:inherit;text-decoration:none;transition:color 0.3s}
+.contact-val a:hover{color:var(--lavender)}
+.contact-right{padding:7rem 5rem;display:flex;flex-direction:column;justify-content:center;background:var(--dusk2)}
+.contact-form-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--white);margin-bottom:0.6rem}
+.contact-form-title em{font-style:italic;color:var(--lavender)}
+.contact-form-sub{font-size:0.78rem;opacity:0.5;margin-bottom:2.5rem;line-height:1.8}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.5rem}
+.form-label{font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;opacity:0.5}
+.form-input,.form-select,.form-textarea{
+  background:rgba(160,126,212,0.05);border:1px solid rgba(160,126,212,0.15);
+  color:var(--sky);padding:1rem 1.2rem;
+  font-family:'Josefin Sans',sans-serif;font-size:0.82rem;
+  outline:none;transition:border-color 0.3s,background 0.3s;width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(160,126,212,0.5);background:rgba(123,94,167,0.05)}
+.form-input::placeholder,.form-textarea::placeholder{opacity:0.35;font-size:0.8rem}
+.form-select option{background:var(--dusk3)}
+.form-textarea{resize:none;height:120px}
+.btn-submit{
+  background:linear-gradient(135deg,var(--violet),var(--violet2));
+  color:var(--white);border:none;cursor:pointer;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;
+  padding:1.1rem 3rem;font-weight:600;
+  transition:all 0.4s;align-self:flex-start;
+  box-shadow:0 8px 32px rgba(123,94,167,0.3);
+}
+.btn-submit:hover{box-shadow:0 12px 48px rgba(160,126,212,0.5);transform:translateY(-2px)}
 
-/* ---- email modal ---- */
-.modal-bg{position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:1100; display:none; align-items:center; justify-content:center;}
-.modal-bg.show{display:flex;}
-.modal{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; max-width:420px; width:90%;}
-.modal h4{margin-bottom:12px;}
-.modal textarea{width:100%; min-height:140px; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; color:var(--text); padding:12px; font-family:var(--font-body); font-size:.85rem; margin-bottom:14px;}
-.modal-btns{display:flex; gap:10px;}
+/* ── FOOTER ── */
+footer{
+  background:var(--dusk3);border-top:1px solid rgba(160,126,212,0.1);
+  padding:3.5rem 6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;
+}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--white);letter-spacing:0.1em}
+.footer-logo em{font-style:italic;color:var(--lavender)}
+.footer-tagline{font-size:0.58rem;opacity:0.35;letter-spacing:0.15em;margin-top:0.3rem}
+.footer-links{display:flex;gap:2.5rem}
+.footer-links a{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky2);opacity:0.4;text-decoration:none;transition:opacity 0.3s,color 0.3s}
+.footer-links a:hover{opacity:1;color:var(--lavender)}
+.footer-copy{font-size:0.6rem;opacity:0.25;letter-spacing:0.08em}
 
-/* ---- responsive ---- */
-@media(max-width:980px){
-  .navlinks,.navright .theme-switch{display:none;}
-  .hamburger{display:flex;}
-  .hero-inner{grid-template-columns:1fr;}
-  .grid6,.prog-wrap,.steps,.cert-wrap,.tgrid,.pgrid{grid-template-columns:1fr;}
-  .statband .wrap{grid-template-columns:repeat(2,1fr);}
-  .chatbox{grid-template-columns:1fr;}
-  .chat-side{border-right:none; border-bottom:1px solid var(--line);}
-  .safety-wrap,.contact-wrap{grid-template-columns:1fr;}
-  .form{grid-template-columns:1fr;}
-  .fgrid{grid-template-columns:1fr 1fr;}
-  .tabpanel.active{grid-template-columns:1fr;}
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  section{padding:6rem 3rem}
+  nav{padding:1.2rem 2rem}
+  nav.scrolled{padding:1rem 2rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-lift{display:none}
+  .about{grid-template-columns:1fr}
+  .about-visual{min-height:420px}
+  .about-badge{right:1rem;bottom:1.5rem}
+  .about-accent-img{width:36%;left:-1rem}
+  .about-text{padding:4rem 3rem}
+  .spec-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+  .g1{grid-column:span 2;grid-row:span 1}
+  .g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1}
+  .occasions-grid{grid-template-columns:1fr}
+  .occasion-card{height:390px}
+  .occasion-desc{max-height:80px;opacity:0.85}
+  .lift-strip{padding:4rem 3rem;gap:3rem}
+  .contact{grid-template-columns:1fr}
+  .contact-left{border-right:none;border-bottom:1px solid rgba(160,126,212,0.08)}
+  footer{padding:2.5rem 2rem;flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .footer-links{flex-wrap:wrap;gap:1.2rem}
+}
+@media(max-width:640px){
+  nav{padding:1rem 1.2rem}
+  nav.scrolled{padding:0.85rem 1.2rem}
+  .nav-logo{font-size:1.1rem}
+  .hero{min-height:100svh}
+  .hero-content{padding:0 1.2rem}
+  .hero-pre-line{width:20px}
+  .hero-cloud-icon{font-size:2rem}
+  .hero-title{font-size:clamp(2.6rem,12vw,4rem)}
+  .hero-title-glow{font-size:clamp(2.9rem,13vw,4.5rem)}
+  .hero-sub{font-size:0.76rem;margin-bottom:2rem}
+  .hero-btns{flex-direction:column;align-items:center;gap:1rem}
+  .btn-primary,.btn-ghost{width:100%;max-width:300px;justify-content:center;padding:1rem 1.5rem}
+  .hero-scroll{display:none}
+  section{padding:4rem 1.4rem}
+  .about-visual{min-height:280px}
+  .about-badge{right:0.8rem;bottom:1rem;padding:1.2rem 1.4rem}
+  .about-accent-img{display:none}
+  .about-text{padding:3rem 1.4rem;gap:1.5rem}
+  .stats-row{gap:1.5rem}
+  .stat-num{font-size:2.2rem}
+  .section-title{font-size:clamp(1.9rem,7.5vw,2.8rem) !important}
+  .spec-grid{grid-template-columns:1fr}
+  .spec-card{padding:2.5rem 1.8rem}
+  .gallery{padding:4rem 1.4rem}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .g1,.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1;height:230px}
+  .lift-strip{padding:3rem 1.4rem;gap:2rem}
+  .lift-item-val{font-size:1.5rem}
+  .occasion-card{height:330px}
+  .occasion-name{font-size:1.7rem}
+  .occasion-desc{max-height:90px;opacity:0.85}
+  .quote-band{padding:4rem 1.4rem}
+  .quote-mark{font-size:4rem}
+  .quote-text{font-size:clamp(1.3rem,5.2vw,1.8rem)}
+  .cta-full{padding:5rem 1.4rem}
+  .cta-title{font-size:clamp(2rem,8.5vw,3.2rem)}
+  .cta-btns{flex-direction:column;align-items:center;gap:1rem}
+  .cta-btns .btn-primary,.cta-btns .btn-ghost{width:100%;max-width:300px;justify-content:center}
+  .contact-left{padding:3.5rem 1.4rem}
+  .contact-right{padding:3.5rem 1.4rem}
+  .form-row{grid-template-columns:1fr}
+  footer{padding:2rem 1.4rem}
+  .footer-links{flex-direction:column;gap:0.8rem}
+  .mobile-menu a{font-size:1.8rem}
 }
 </style>
 </head>
-<body data-theme="sapphire">
+<body>
 
-<div id="progress"></div>
-
-<header>
-  <nav>
-    <a href="#hero" class="logo"><span class="logo-mark">DS</span> The Dental Sapphire</a>
-    <div class="navlinks" id="navlinks">
-      <a href="#why" class="nl active">Why Us</a>
-      <a href="#treatments" class="nl">Treatments</a>
-      <a href="#journey" class="nl">Journey</a>
-      <a href="#certifications" class="nl">Certifications</a>
-      <a href="#safety" class="nl">Hygiene &amp; Safety</a>
-      <a href="#pricing" class="nl">Pricing</a>
-      <a href="#faq" class="nl">FAQ</a>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-top">
+      <span class="nav-logo-icon">☁️</span>
+      <span>Sky <em style="font-style:italic;color:var(--lavender)">Heaven</em> Ball Room</span>
     </div>
-    <div class="navright">
-      <div class="theme-switch" id="themeSwitch">
-        <div class="theme-dot active" data-t="sapphire" title="Sapphire"></div>
-        <div class="theme-dot" data-t="pearl" title="Pearl"></div>
-        <div class="theme-dot" data-t="amethyst" title="Amethyst"></div>
-        <div class="theme-dot" data-t="ruby" title="Ruby"></div>
-      </div>
-      <a href="#contact" class="btn btn-primary" style="padding:11px 20px;">Free Consultation</a>
-      <button class="hamburger" id="hamBtn"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-</header>
+    <span class="nav-logo-sub">North Nazimabad · Karachi</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#specialities">Features</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#occasions">Occasions</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta"><span>Book Now</span></a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<div class="drawer" id="drawer">
-  <button class="drawer-close" id="drawerClose">✕</button>
-  <a href="#why">Why Us</a>
-  <a href="#treatments">Treatments</a>
-  <a href="#journey">Journey</a>
-  <a href="#certifications">Certifications</a>
-  <a href="#safety">Hygiene &amp; Safety</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Free Consultation</a>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#specialities" onclick="closeMobileMenu()">Features</a>
+  <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+  <a href="#occasions" onclick="closeMobileMenu()">Occasions</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact" class="mobile-menu-cta" onclick="closeMobileMenu()">Book Now</a>
 </div>
 
-<!-- ================= HERO ================= -->
-<section id="hero">
-  <div class="hero-bg" id="heroGlow"></div>
-  <div class="hero-grid"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow">Aesthetic · Orthodontic · Implant &amp; Cosmetic Dentistry · North Nazimabad, Karachi</span>
-      <h1>Where Every Smile Is Cut Like a Sapphire</h1>
-      <p>A premium dental and aesthetic clinic offering orthodontics, implants, cosmetic dentistry, skin care and hair treatment under one roof — with specialist-led care, transparent plans and a comfort-first approach.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary" onclick="return false;">Book a Free Consultation</a>
-        <a href="#treatments" class="btn btn-ghost">Explore Treatments</a>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-skygrad"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Floating clouds -->
+  <div class="clouds" id="clouds"></div>
+  <!-- Stars -->
+  <div class="stars-bg" id="starsEl"></div>
+
+  <!-- Glass lift silhouettes -->
+  <div class="hero-lift">
+    <div class="lift-shaft"><div class="lift-cabin" style="--d:3.5s;--delay:0s"></div></div>
+    <div class="lift-shaft"><div class="lift-cabin" style="--d:4.2s;--delay:1.8s"></div></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-pre">
+      <div class="hero-pre-line"></div>
+      <span class="hero-pre-text">North Nazimabad · Karachi · Multi-Floor Venue</span>
+      <div class="hero-pre-line r"></div>
+    </div>
+
+    <span class="hero-cloud-icon">🌸</span>
+
+    <h1 class="hero-title">
+      Above the
+      <em class="hero-title-glow">Ordinary.</em>
+    </h1>
+
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-gem"></div>
+      <div class="hero-divider-line r"></div>
+    </div>
+
+    <p class="hero-sub">A multi-floor celebration venue with 2 glass lifts, warm ambiance, and everything your event needs — from intimate birthdays to grand weddings, all in the heart of North Nazimabad.</p>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary"><span>Reserve Your Date</span></a>
+      <a href="#gallery" class="btn-ghost">Explore the Venue</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Discover</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-img-fill"></div>
+    <div class="about-img-overlay"></div>
+    <div class="about-accent-img">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789208744-media.webp" alt="Sky Heaven detail">
+    </div>
+    <div class="about-badge">
+      <span class="about-badge-num">☁️</span>
+      <span class="about-badge-label">Heaven Above Karachi</span>
+    </div>
+  </div>
+
+  <div class="about-text">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 class="section-title">Where Every<br>Occasion <em>Soars</em></h2>
+    </div>
+    <p class="section-body">Sky Heaven Ball Room is North Nazimabad's beloved multi-floor event venue — a space that floats above the everyday, offering a warm, photogenic ambiance and genuine hospitality for every occasion imaginable.</p>
+    <p class="section-body">With 2 glass lifts, dedicated floors for events, a customisable stage, full catering, and a team that treats every guest as family — Sky Heaven delivers a heavenly experience at a price that feels like a blessing.</p>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">250+</span>
+        <span class="stat-label">Guest Capacity</span>
       </div>
-      <div class="hero-stats">
-        <div class="hstat"><b class="counter" data-target="5000">0</b><span>Smiles Treated*</span></div>
-        <div class="hstat"><b class="counter" data-target="98">0</b><span>% Patient Satisfaction*</span></div>
-        <div class="hstat"><b class="counter" data-target="10">0</b><span>Years Combined Experience*</span></div>
+      <div class="stat">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Glass Lifts</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">Always Open</span>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="floaty f1">🎓 Certified Specialists</div>
-      <div class="hero-card">
-        <span class="tag"><span class="dot"></span> Slot Available Today</span>
-        <div class="chat-sim">
-          <div class="bubble them">Hi! I'd like to know more about braces.</div>
-          <div class="bubble me">Sure — we offer a free consultation with imaging before any treatment plan. Want today's 4:30 PM slot?</div>
-          <div class="bubble them">Yes please!</div>
+    <div>
+      <a href="#contact" class="btn-primary" style="display:inline-flex"><span>Schedule a Visit</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALITIES -->
+<section class="specialities" id="specialities">
+  <div class="spec-header">
+    <span class="eyebrow">The Sky Heaven Experience</span>
+    <h2 class="section-title">Everything Your<br>Event <em>Deserves</em></h2>
+    <p class="section-body">Every amenity thoughtfully provided so your celebration is effortless, beautiful, and truly memorable.</p>
+  </div>
+
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">🛗</span></div>
+      <span class="spec-num">01</span>
+      <div class="spec-name">2 Glass Lifts</div>
+      <p class="spec-desc">Two operational glass lifts serving all floors continuously — a signature feature that gives every arrival a grand, cinematic entrance.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">🎭</span></div>
+      <span class="spec-num">02</span>
+      <div class="spec-name">Customisable Stage</div>
+      <p class="spec-desc">A fully customisable stage designed to bring your vision to life — whether royal, floral, modern, or anything in between.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">💡</span></div>
+      <span class="spec-num">03</span>
+      <div class="spec-name">Follow Lights &amp; Smog</div>
+      <p class="spec-desc">Professional follow lights, smog effects, and a DJ sound system that transform your event into an immersive, unforgettable spectacle.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">🍽️</span></div>
+      <span class="spec-num">04</span>
+      <div class="spec-name">Internal Catering</div>
+      <p class="spec-desc">Our in-house culinary team crafts delicious spreads tailored to your occasion — from traditional dastarkhwans to curated menus.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">👩‍💼</span></div>
+      <span class="spec-num">05</span>
+      <div class="spec-name">Male &amp; Female Staff</div>
+      <p class="spec-desc">Both male and female servers available, providing attentive and professional hospitality tailored to your guests' comfort.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon-box"><span class="spec-icon">🚗</span></div>
+      <span class="spec-num">06</span>
+      <div class="spec-name">Valet &amp; Generator</div>
+      <p class="spec-desc">Valet parking for all guests and a standby generator ensuring your event runs flawlessly without interruption, from start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <span class="eyebrow">The Venue</span>
+    <h2 class="section-title">A Glimpse of <em>Heaven</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item g1">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789204953-media.webp" alt="Sky Heaven hall" loading="lazy">
+      <div class="g-item-overlay"><span class="g-item-label">Grand Hall</span></div>
+    </div>
+    <div class="g-item g2">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789206302-media.webp" alt="Stage setup" loading="lazy">
+      <div class="g-item-overlay"><span class="g-item-label">Stage Setup</span></div>
+    </div>
+    <div class="g-item g3">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789208744-media.webp" alt="Interior" loading="lazy">
+      <div class="g-item-overlay"><span class="g-item-label">Interior</span></div>
+    </div>
+    <div class="g-item g4">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789210618-media.webp" alt="Ambiance" loading="lazy">
+      <div class="g-item-overlay"><span class="g-item-label">Ambiance</span></div>
+    </div>
+    <div class="g-item g5">
+      <img src="https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789212406-media.webp" alt="Decor" loading="lazy">
+      <div class="g-item-overlay"><span class="g-item-label">Décor</span></div>
+    </div>
+  </div>
+  <div class="gallery-cta">
+    <a href="#contact" class="btn-ghost">Request a Personal Tour</a>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<div class="occasions" id="occasions">
+  <div class="occasions-grid">
+    <div class="occasion-card">
+      <div class="occasion-bg" style="background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789206302-media.webp')"></div>
+      <div class="occasion-overlay"></div>
+      <div class="occasion-shimmer"></div>
+      <div class="occasion-content">
+        <span class="occasion-icon">💍</span>
+        <span class="occasion-num">01</span>
+        <div class="occasion-name">Weddings &amp;<br>Shadi Events</div>
+        <div class="occasion-divider"></div>
+        <p class="occasion-desc">Barat, Valima, Nikkah, Aqiqa — every milestone celebrated with warmth, grace, and a heavenly backdrop.</p>
+      </div>
+    </div>
+    <div class="occasion-card">
+      <div class="occasion-bg" style="background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789210618-media.webp')"></div>
+      <div class="occasion-overlay"></div>
+      <div class="occasion-shimmer"></div>
+      <div class="occasion-content">
+        <span class="occasion-icon">🎂</span>
+        <span class="occasion-num">02</span>
+        <div class="occasion-name">Birthdays &amp;<br>Social Events</div>
+        <div class="occasion-divider"></div>
+        <p class="occasion-desc">Intimate gatherings or lively celebrations — our venue adapts perfectly to create your ideal birthday or social event.</p>
+      </div>
+    </div>
+    <div class="occasion-card">
+      <div class="occasion-bg" style="background-image:url('https://d10gxw1e8w7mt0.cloudfront.net/undefined/karachi/Sky-Heaven-Ball-Room/1757789204953-media.webp')"></div>
+      <div class="occasion-overlay"></div>
+      <div class="occasion-shimmer"></div>
+      <div class="occasion-content">
+        <span class="occasion-icon">🏢</span>
+        <span class="occasion-num">03</span>
+        <div class="occasion-name">Corporate &amp;<br>Seminars</div>
+        <div class="occasion-divider"></div>
+        <p class="occasion-desc">Workshops, company meetings, seminars, and religious gatherings — professionally hosted in a calm, elevated setting.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIFT FEATURE STRIP -->
+<div class="lift-strip">
+  <div class="lift-item">
+    <span class="lift-item-icon">🛗</span>
+    <span class="lift-item-label">Glass Lifts</span>
+    <span class="lift-item-val">2 Operating</span>
+  </div>
+  <div class="lift-item">
+    <span class="lift-item-icon">👥</span>
+    <span class="lift-item-label">Guest Capacity</span>
+    <span class="lift-item-val">Up to 250</span>
+  </div>
+  <div class="lift-item">
+    <span class="lift-item-icon">⏰</span>
+    <span class="lift-item-label">Availability</span>
+    <span class="lift-item-val">24 / 7</span>
+  </div>
+  <div class="lift-item">
+    <span class="lift-item-icon">💰</span>
+    <span class="lift-item-label">Starting From</span>
+    <span class="lift-item-val">PKR 35,000</span>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-band">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">A genuine desire to make your event — from weddings to birthdays to corporate gatherings — a memory that lasts a lifetime.</p>
+  <span class="quote-source">Sky Heaven Ball Room · Karachi</span>
+</div>
+
+<!-- CTA -->
+<div class="cta-full">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <span class="cta-eyebrow">Book Your Date Today</span>
+    <h2 class="cta-title">Your Celebration<br>Belongs <em>Here</em></h2>
+    <p class="cta-sub">Reasonable pricing. Heavenly experience. Reach out and let us make it unforgettable.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary"><span>Check Availability</span></a>
+      <a href="tel:+923032100127" class="btn-ghost">Call Us Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+  <div class="contact-left">
+    <div>
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title" style="font-size:2.3rem">Book Your<br><em>Heavenly</em> Event</h2>
+    </div>
+    <div>
+      <div class="contact-info-item">
+        <span class="contact-label">Location</span>
+        <span class="contact-val">B-74, 1st Floor, Block-L<br>North Nazimabad, Karachi</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-label">Phone</span>
+        <span class="contact-val">
+          <a href="tel:+923032100127">0303-2100127</a><br>
+          <a href="tel:+923150603803">0315-0603803</a>
+        </span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-label">Availability</span>
+        <span class="contact-val">Open 24 Hours · 7 Days a Week</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-label">Pricing</span>
+        <span class="contact-val">PKR 35,000 – 85,000</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-label">Social</span>
+        <span class="contact-val"><a href="https://www.facebook.com/skyheavenbanquet/" target="_blank">facebook.com/skyheavenbanquet</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <h3 class="contact-form-title">Reserve Your <em>Date</em></h3>
+    <p class="contact-form-sub">Share your details and our team will get back to you within 24 hours to plan your perfect event.</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" type="tel" placeholder="+92 3XX XXXXXXX">
         </div>
       </div>
-      <div class="floaty f2">✨ Hygiene Verified</div>
-    </div>
-  </div>
-</section>
-
-<div class="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
-
-<section class="statband">
-  <div class="wrap">
-    <div><b class="counter" data-target="5000">0</b><span>Smiles Treated*</span></div>
-    <div><b class="counter" data-target="98">0</b><span>Patient Satisfaction Rate*</span></div>
-    <div><b class="counter" data-target="3">0</b><span>Care Tracks</span></div>
-    <div><b class="counter" data-target="100">0</b><span>% Verified Specialists</span></div>
-  </div>
-</section>
-
-<!-- ================= WHY US ================= -->
-<section class="section" id="why">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why The Dental Sapphire</span>
-      <h2>The Clinic Built Differently</h2>
-      <p>A single home for dental, skin and hair care — planned around comfort, transparency and results you can see.</p>
-    </div>
-    <div class="grid6" id="whyGrid"></div>
-  </div>
-</section>
-
-<!-- ================= TREATMENTS / PROGRAMS ================= -->
-<section class="section" id="treatments" style="background:var(--bg-soft);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Care Tracks</span>
-      <h2>Three Tracks. One Clinic.</h2>
-      <p>Every patient follows a structured plan — not a one-off procedure — so results are documented, guided and guaranteed.</p>
-    </div>
-    <div class="prog-wrap" id="progGrid"></div>
-  </div>
-</section>
-
-<!-- ================= HOW IT WORKS ================= -->
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">The Process</span>
-      <h2>From First Hello to Final Smile</h2>
-    </div>
-    <div class="steps" id="stepsGrid"></div>
-  </div>
-</section>
-
-<!-- ================= JOURNEY / CURRICULUM ================= -->
-<section class="section" id="journey" style="background:var(--bg-soft);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Treatment Journey</span>
-      <h2>Full Journey Overview</h2>
-      <p>See every visit, mapped out in advance, for each care track.</p>
-    </div>
-    <div class="tabbar" id="tabbar"></div>
-    <div id="tabpanels"></div>
-  </div>
-</section>
-
-<!-- ================= CERTIFICATIONS ================= -->
-<section class="section" id="certifications">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Certifications &amp; Guarantees</span>
-      <h2>Care That's Documented, Not Just Promised</h2>
-    </div>
-    <div class="cert-wrap">
-      <div class="cert-card reveal">
-        <h4>🎓 Treatment Completion Certificate</h4>
-        <ul>
-          <li>All planned visits attended</li>
-          <li>Aftercare plan followed &amp; logged</li>
-          <li>Final check-up passed</li>
-          <li>Digital + printable certificate</li>
-          <li>Signed by your lead specialist</li>
-        </ul>
+      <div class="form-group">
+        <label class="form-label">Occasion Type</label>
+        <select class="form-select">
+          <option value="">Select your occasion</option>
+          <option>Wedding — Barat</option>
+          <option>Wedding — Valima</option>
+          <option>Mehndi / Dholki</option>
+          <option>Nikkah / Aqiqa</option>
+          <option>Birthday Party</option>
+          <option>Corporate / Seminar</option>
+          <option>Religious Gathering</option>
+          <option>Other</option>
+        </select>
       </div>
-      <div class="cert-preview reveal">
-        <div class="seal">💎</div>
-        <h4>Certificate of Care</h4>
-        <p style="font-size:.85rem; color:var(--text-dim); margin-top:6px;">Awarded to [Patient Name]<br>for completing the [Track Name] program</p>
-        <small>The Dental Sapphire · North Nazimabad, Karachi · Demo Preview</small>
-      </div>
-      <div class="cert-card reveal">
-        <h4>⭐ Premium Care Recognition</h4>
-        <ul>
-          <li>All completion criteria met</li>
-          <li>Highest satisfaction rating</li>
-          <li>Specialist commendation on results</li>
-          <li>Priority booking for future visits</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CHATBOT ================= -->
-<section class="section" id="chatbot" style="background:var(--bg-soft);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Ask Anytime</span>
-      <h2>Chat with Our Clinic Assistant</h2>
-      <p>Offline, keyword-based assistant — works without any external service. Try a question below.</p>
-    </div>
-    <div class="chatbox reveal">
-      <div class="chat-side">
-        <h4>Quick Questions</h4>
-        <button class="sugg" data-q="What treatments do you offer?">What treatments do you offer?</button>
-        <button class="sugg" data-q="How much does it cost?">How much does it cost?</button>
-        <button class="sugg" data-q="Is it safe and hygienic?">Is it safe and hygienic?</button>
-        <button class="sugg" data-q="How do I book a free consultation?">How do I book a free consultation?</button>
-        <button class="sugg" data-q="Where are you located?">Where are you located?</button>
-        <button class="sugg" data-q="Tell me about certifications">Tell me about certifications</button>
-      </div>
-      <div class="chat-main">
-        <div class="chat-log" id="chatLog">
-          <div class="bubble them">Hi! I'm the Dental Sapphire assistant. Ask me about treatments, pricing, safety or booking. 🦷</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Event Date</label>
+          <input class="form-input" type="date">
         </div>
-        <div class="chat-actions" id="chatActions" style="display:none;">
-          <button class="btn btn-ghost" id="sendWa">Send to WhatsApp</button>
-          <button class="btn btn-ghost" id="sendEmail">Send via Email</button>
-        </div>
-        <div class="chat-inputbar">
-          <input type="text" id="chatInput" placeholder="Type your question...">
-          <button id="chatSend">➤</button>
-        </div>
-        <div class="chat-disclaimer">Demo assistant · For real queries call <strong>+92 3XX XXXXXXX</strong> (placeholder) or message us on <a href="#" style="color:var(--accent2);">WhatsApp</a>.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SAFETY ================= -->
-<section class="section" id="safety">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Hygiene &amp; Safety</span>
-      <h2>Built for Patients Who Are Rightly Careful</h2>
-    </div>
-    <div class="safety-wrap">
-      <div id="safetyList"></div>
-      <div class="safe-card reveal">
-        <div style="font-size:2rem;">🛡️</div>
-        <h4 style="margin-top:10px;">Clinic Safety Standard</h4>
-        <p style="color:var(--text-dim); font-size:.88rem; margin-top:6px;">Every instrument, every visit — no exceptions.</p>
-        <div class="badges2">
-          <div class="badge2">Sterilized &amp; Safe</div>
-          <div class="badge2">Licensed Specialists</div>
-          <div class="badge2">Transparent Pricing</div>
-          <div class="badge2">Privacy Respected</div>
+        <div class="form-group">
+          <label class="form-label">Guest Count</label>
+          <input class="form-input" type="number" placeholder="Approx. guests">
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-<section class="section" style="background:var(--bg-soft);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Patient Stories*</span>
-      <h2>Trusted by Patients Across Karachi</h2>
-      <p style="font-size:.8rem;">*Illustrative demo reviews — not real patient submissions.</p>
-    </div>
-    <div class="tgrid" id="tgrid"></div>
-  </div>
-</section>
-
-<!-- ================= PRICING ================= -->
-<section class="section" id="pricing">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Investment</span>
-      <h2>No Surprises. Ever.</h2>
-    </div>
-    <div class="pgrid" id="pgrid"></div>
-    <p class="pricenote">Demo pricing shown for illustration only · Final cost confirmed after your free consultation · Flexible payment plans available.</p>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="section" id="faq" style="background:var(--bg-soft);">
-  <div class="wrap" style="max-width:800px;">
-    <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Questions Patients Actually Ask</h2>
-    </div>
-    <div id="faqList"></div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="section" id="contact">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Book Now</span>
-      <h2>Book Your Free Consultation</h2>
-    </div>
-    <div class="contact-wrap">
-      <div class="reveal">
-        <div class="cinfo-item"><div class="ico">📍</div><span>Shop # 5, Bhayani Garden, Block H, North Nazimabad, Karachi, Pakistan 74600</span></div>
-        <div class="cinfo-item"><div class="ico">📞</div><span>+92 3XX XXXXXXX (placeholder)</span></div>
-        <div class="cinfo-item"><div class="ico">✉️</div><span>hello@thedentalsapphire.demo (placeholder)</span></div>
-        <div class="cinfo-item"><div class="ico">🕒</div><span>Mon–Sat · 11:00 AM – 8:00 PM (placeholder hours)</span></div>
-        <div class="cinfo-item"><div class="ico">📷</div><span>Follow <a href="https://www.instagram.com/thedentalsapphire/" style="color:var(--accent2);" target="_blank" rel="noopener">@thedentalsapphire</a> on Instagram</span></div>
+      <div class="form-group">
+        <label class="form-label">Tell Us About Your Event</label>
+        <textarea class="form-textarea" placeholder="Share your vision and any special requirements..."></textarea>
       </div>
-      <form class="form reveal" id="bookForm" onsubmit="return false;">
-        <div><label>Full Name</label><input type="text" placeholder="Your name" required></div>
-        <div><label>Phone / WhatsApp</label><input type="text" placeholder="03XX-XXXXXXX" required></div>
-        <div><label>Treatment Interested In</label>
-          <select id="fTrack">
-            <option>Smile &amp; Orthodontics</option>
-            <option>Implants &amp; Cosmetic Dentistry</option>
-            <option>Skin &amp; Hair Renewal</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div><label>Preferred Date</label><input type="date"></div>
-        <div class="full"><label>Message</label><textarea placeholder="Tell us a bit about what you need..."></textarea></div>
-        <div class="full"><button type="button" class="btn btn-primary" id="bookWa">Book My Free Consultation 🦷</button></div>
-      </form>
-    </div>
+      <button type="submit" class="btn-submit">Send Inquiry →</button>
+    </form>
   </div>
-</section>
+</div>
 
-<!-- ================= CTA BAND ================= -->
-<section class="ctaband">
-  <div class="wrap">
-    <h2>Ready for your sapphire smile?</h2>
-    <p>One free consultation. No pressure, no commitment.</p>
-    <div class="btnrow">
-      <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-      <a href="#" class="btn btn-ghost">💬 WhatsApp Us</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
-  <div class="wrap">
-    <div class="demo-note reveal">This is a demo concept website built for The Dental Sapphire. Figures, pricing, phone numbers, hours and testimonials shown are illustrative placeholders, not live clinic data.</div>
-    <div class="fgrid">
-      <div class="fcol fbrand">
-        <a href="#hero" class="logo"><span class="logo-mark">DS</span> The Dental Sapphire</a>
-        <p>Aesthetic · Orthodontic · Implant &amp; Cosmetic Dentistry · Skin Care · Hair Treatment — North Nazimabad, Karachi.</p>
-        <div class="socials">
-          <a href="https://www.instagram.com/thedentalsapphire/" target="_blank" rel="noopener">IG</a>
-          <a href="#">FB</a>
-          <a href="#">WA</a>
-        </div>
-      </div>
-      <div class="fcol"><h5>Treatments</h5>
-        <a href="#treatments">Smile &amp; Orthodontics</a>
-        <a href="#treatments">Implants &amp; Cosmetic</a>
-        <a href="#treatments">Skin &amp; Hair Renewal</a>
-        <a href="#journey">Full Journey</a>
-      </div>
-      <div class="fcol"><h5>Clinic</h5>
-        <a href="#why">Why Us</a>
-        <a href="#safety">Hygiene &amp; Safety</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#pricing">Pricing</a>
-      </div>
-      <div class="fcol"><h5>Contact</h5>
-        <a href="#contact">Book a Consultation</a>
-        <a href="#">+92 3XX XXXXXXX</a>
-        <a href="#">hello@thedentalsapphire.demo</a>
-      </div>
-    </div>
-    <div class="fbottom">
-      <span>© 2026 The Dental Sapphire · Demo Website</span>
-      <div class="links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Patient Safety Policy</a></div>
-    </div>
+  <div>
+    <div class="footer-logo">Sky <em>Heaven</em> Ball Room</div>
+    <div class="footer-tagline">Block-L, North Nazimabad · Karachi · Pakistan · Open 24/7</div>
   </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#occasions">Occasions</a>
+    <a href="tel:+923032100127">0303-2100127</a>
+    <a href="https://www.facebook.com/skyheavenbanquet/" target="_blank">Facebook</a>
+  </div>
+  <span class="footer-copy">© 2026 Sky Heaven Ball Room. All rights reserved.</span>
 </footer>
 
-<a id="waFab" href="#" title="WhatsApp us">💬</a>
-<button id="toTop">↑</button>
-
-<div class="modal-bg" id="emailModal">
-  <div class="modal">
-    <h4>Send via Email</h4>
-    <textarea id="emailText" readonly></textarea>
-    <div class="modal-btns">
-      <button class="btn btn-ghost" id="copyEmail">Copy Text</button>
-      <a class="btn btn-primary" id="mailtoBtn" href="#">Open Mail App</a>
-    </div>
-    <button class="btn btn-ghost" style="margin-top:12px; width:100%; justify-content:center;" id="closeModal">Close</button>
-  </div>
-</div>
-
 <script>
-/* ================= DATA ================= */
-const WHY = [
-  ['🩺','Specialist-Led Care','Every treatment is planned and delivered by qualified dental and aesthetic specialists.'],
-  ['🕊️','Comfort-First Approach','Gentle, anxiety-friendly techniques so visits feel calm, not clinical.'],
-  ['🧼','Modern Sterilization','Hospital-grade sterilization for every instrument, every single visit.'],
-  ['🏠','All-in-One Care','Dental, skin and hair treatment under one roof — no referrals needed.'],
-  ['📋','Transparent Plans','Costs, timelines and options explained clearly before you commit.'],
-  ['📸','Real, Documented Results','Before/after progress tracked and shared with you at every stage.'],
-];
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80));
 
-const PROGRAMS = [
-  {emoji:'🦷',name:'Smile &amp; Orthodontics',meta:'For Teens &amp; Adults · 10 Visit Modules',items:['Consultation &amp; digital imaging','Braces / aligner fitting','Monthly adjustment visits','Professional whitening','Retention &amp; maintenance plan'],cta:'Start Your Smile Journey',pop:false},
-  {emoji:'🛠️',name:'Implants &amp; Cosmetic Dentistry',meta:'For Adults · 9 Visit Modules',items:['Implant consultation &amp; scan','Surgical placement','Healing &amp; follow-up checks','Crown / veneer fitting','Final polish &amp; bite check'],cta:'Explore Implant &amp; Cosmetic Care',pop:true},
-  {emoji:'🚀',name:'Skin &amp; Hair Renewal',meta:'For All Ages · 12 Visit Modules',items:['Skin &amp; scalp analysis','Facial / PRP sessions','Hair restoration therapy','Glow maintenance visits','Personalized home-care plan'],cta:'Book Skin &amp; Hair Consult',pop:false},
-];
-
-const STEPS = [
-  ['Book a Free Consultation','Meet a specialist and get an honest assessment. No pressure, no card required.'],
-  ['Meet Your Specialist','Get matched with the right specialist for your treatment track.'],
-  ['Guided Treatment Sessions','Follow a clear visit-by-visit plan, scheduled around your life.'],
-  ['Results Review &amp; Aftercare','Final check-up, aftercare plan and your completion certificate.'],
-];
-
-const JOURNEY = {
-  'Smile &amp; Orthodontics': ['Initial exam &amp; X-rays','Digital smile imaging','Treatment plan &amp; consent','Braces / aligner fitting','Adjustment visit 1','Adjustment visit 2','Adjustment visit 3','Whitening session','Retainer fitting','Final review'],
-  'Implants &amp; Cosmetic Dentistry': ['Implant consultation','3D scan &amp; planning','Surgical placement','Healing check (2 weeks)','Healing check (6 weeks)','Abutment fitting','Crown / veneer try-in','Final cementation','Bite adjustment'],
-  'Skin &amp; Hair Renewal': ['Skin &amp; scalp analysis','Personalized plan design','Facial session 1','PRP / therapy session','Facial session 2','Hair restoration session','Progress review','Glow maintenance visit','Home-care handover','Final results check'],
-};
-
-const SAFETY = [
-  ['🧪','Sterile Instruments Every Visit','Autoclave sterilization and single-use disposables wherever applicable.'],
-  ['🪪','Licensed Specialists Only','Verified credentials, with ongoing training in every discipline offered.'],
-  ['🗣️','Open Consultation Policy','Ask any question, any time — no pressure to commit on the spot.'],
-  ['🔒','Minimal Data Collection','We only collect contact and treatment details. No ad-sharing, ever.'],
-  ['📆','No Long-Term Lock-In','Pay-per-visit or flexible plans. Pause or stop treatment anytime.'],
-];
-
-const TESTIMONIALS = [
-  ['Ayesha K.','Smile &amp; Orthodontics · Karachi','My aligner journey was explained step by step — I always knew what visit came next and why.'],
-  ['Bilal S.','Implants &amp; Cosmetic · Karachi','The implant process felt safe and unrushed. Every stage was documented with photos.'],
-  ['Mahnoor R.','Skin &amp; Hair Renewal · Karachi','Loved the combined skin and hair plan — one clinic, one calendar, real progress.'],
-];
-
-const PRICING = [
-  {name:'🦷 Smile &amp; Orthodontics',price:'PKR 15,000+',note:'/ starting, per phase',items:['Free first consultation','Digital imaging included','Monthly adjustment visits','Retention plan'],pop:false},
-  {name:'🛠️ Implants &amp; Cosmetic',price:'PKR 45,000+',note:'/ starting, per implant',items:['Free consultation &amp; scan review','Staged payment options','Healing follow-ups included','Completion certificate'],pop:true},
-  {name:'🚀 Skin &amp; Hair Renewal',price:'PKR 8,000+',note:'/ starting, per session',items:['Free skin/scalp analysis','Flexible session packages','Home-care plan included','Progress photo tracking'],pop:false},
-];
-
-const FAQ = [
-  ['Is the treatment painful?','Most procedures use modern, gentle techniques with local anesthesia where needed. Your specialist will always explain what to expect beforehand.'],
-  ['How long does a full treatment plan take?','It depends on the track — orthodontics can take months, while a single cosmetic or skin session may take under an hour. Your consultation includes a clear timeline.'],
-  ['Which track is right for me?','Book a free consultation — your specialist will recommend the right track based on your goals and a hands-on assessment.'],
-  ['How does the certificate/warranty work?','Complete your planned visits and aftercare steps to receive a digital completion certificate, with a warranty card for eligible procedures.'],
-  ['What should I bring to my first visit?','Just a valid ID and any previous dental or medical records, if available. Everything else is handled at the clinic.'],
-  ['What if I want to pause my treatment?','Most plans are flexible — you can pause and resume orthodontic or skin/hair sessions with your specialist\'s guidance.'],
-  ['Can I see before/after results before starting?','Yes — ask your specialist during your free consultation for example cases similar to your treatment goal.'],
-];
-
-/* ================= RENDER HELPERS ================= */
-const whyGrid=document.getElementById('whyGrid');
-WHY.forEach(([ico,t,p])=>{whyGrid.insertAdjacentHTML('beforeend',`<div class="card reveal tilt"><div class="ico">${ico}</div><h4>${t}</h4><p>${p}</p></div>`);});
-
-const progGrid=document.getElementById('progGrid');
-PROGRAMS.forEach(p=>{
-  progGrid.insertAdjacentHTML('beforeend',`<div class="prog reveal tilt ${p.pop?'pop':''}">${p.pop?'<span class="badge-pop">Most Popular</span>':''}<div class="emoji">${p.emoji}</div><h3>${p.name}</h3><div class="meta">${p.meta}</div><ul>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul><a href="#contact" class="btn btn-primary">${p.cta}</a></div>`);
-});
-
-const stepsGrid=document.getElementById('stepsGrid');
-STEPS.forEach(([t,p],i)=>{stepsGrid.insertAdjacentHTML('beforeend',`<div class="step reveal"><div class="num">0${i+1}</div><h4>${t}</h4><p>${p}</p></div>`);});
-
-const tabbar=document.getElementById('tabbar');
-const tabpanels=document.getElementById('tabpanels');
-Object.keys(JOURNEY).forEach((track,i)=>{
-  tabbar.insertAdjacentHTML('beforeend',`<button class="tabbtn ${i===0?'active':''}" data-tab="${i}">${track}</button>`);
-  const chapters=JOURNEY[track].map((c,idx)=>`<div class="chapter"><span class="n">${idx+1}</span><span>${c}</span></div>`).join('');
-  tabpanels.insertAdjacentHTML('beforeend',`<div class="tabpanel ${i===0?'active':''}" data-panel="${i}">${chapters}</div>`);
-});
-tabbar.addEventListener('click',e=>{
-  const btn=e.target.closest('.tabbtn'); if(!btn) return;
-  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelector(`.tabpanel[data-panel="${btn.dataset.tab}"]`).classList.add('active');
-});
-
-const safetyList=document.getElementById('safetyList');
-SAFETY.forEach(([ico,t,p])=>{safetyList.insertAdjacentHTML('beforeend',`<div class="safe-item reveal"><div class="ico">${ico}</div><div><h4>${t}</h4><p>${p}</p></div></div>`);});
-
-const tgrid=document.getElementById('tgrid');
-TESTIMONIALS.forEach(([name,tag,quote])=>{
-  const initials=name.split(' ').map(n=>n[0]).join('');
-  tgrid.insertAdjacentHTML('beforeend',`<div class="tcard reveal tilt"><div class="stars">★★★★★</div><p>"${quote}"</p><div class="tperson"><div class="avatar">${initials}</div><div><b>${name}</b><span>${tag}</span></div></div></div>`);
-});
-
-const pgrid=document.getElementById('pgrid');
-PRICING.forEach(p=>{
-  pgrid.insertAdjacentHTML('beforeend',`<div class="pcard reveal ${p.pop?'pop':''}">${p.pop?'<span class="badge-pop">Most Popular</span>':''}<h4>${p.name}</h4><div class="price">${p.price}<br><small>${p.note}</small></div><ul>${p.items.map(i=>`<li>${i}</li>`).join('')}</ul><a href="#contact" class="btn btn-primary">Choose Track</a></div>`);
-});
-
-const faqList=document.getElementById('faqList');
-FAQ.forEach(([q,a])=>{faqList.insertAdjacentHTML('beforeend',`<div class="faq-item reveal"><div class="faq-q">${q}<span class="plus">+</span></div><div class="faq-a">${a}</div></div>`);});
-faqList.addEventListener('click',e=>{
-  const q=e.target.closest('.faq-q'); if(!q) return;
-  q.parentElement.classList.toggle('open');
-});
-
-/* marquee */
-const marqueeItems=['Aesthetic Dentistry','Orthodontics','Dental Implants','Cosmetic Dentistry','Skin Care','Hair Treatment','North Nazimabad, Karachi','Sterile &amp; Safe Clinic','Flexible Payment Plans','Free Consultation'];
-const track=document.getElementById('marqueeTrack');
-track.innerHTML=[...marqueeItems,...marqueeItems].map(i=>`<span>${i} ✦</span>`).join('');
-
-/* ================= NAV / DRAWER ================= */
-const hamBtn=document.getElementById('hamBtn'),drawer=document.getElementById('drawer'),drawerClose=document.getElementById('drawerClose');
-hamBtn.onclick=()=>drawer.classList.add('open');
-drawerClose.onclick=()=>drawer.classList.remove('open');
-drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
-
-/* theme switch */
-document.getElementById('themeSwitch').addEventListener('click',e=>{
-  const dot=e.target.closest('.theme-dot'); if(!dot) return;
-  document.body.setAttribute('data-theme',dot.dataset.t);
-  document.querySelectorAll('.theme-dot').forEach(d=>d.classList.remove('active'));
-  dot.classList.add('active');
-});
-
-/* scroll progress + toTop + active link */
-const progress=document.getElementById('progress'),toTop=document.getElementById('toTop');
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
-  progress.style.width=pct+'%';
-  toTop.classList.toggle('show',h.scrollTop>500);
-  let current='';
-  document.querySelectorAll('section[id]').forEach(sec=>{
-    if(window.scrollY>=sec.offsetTop-140) current=sec.id;
-  });
-  document.querySelectorAll('.nl').forEach(l=>{
-    l.classList.toggle('active',l.getAttribute('href')==='#'+current);
-  });
-});
-toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
-
-/* hero parallax */
-document.addEventListener('mousemove',e=>{
-  const glow=document.getElementById('heroGlow');
-  const x=(e.clientX/window.innerWidth-0.5)*30;
-  const y=(e.clientY/window.innerHeight-0.5)*30;
-  glow.style.transform=`translate(${x}px,${y}px)`;
-});
-
-/* reveal on scroll */
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* animated counters */
-const counters=document.querySelectorAll('.counter');
-const cio=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting){
-      const el=en.target,target=+el.dataset.target;let cur=0;
-      const step=Math.max(1,Math.ceil(target/60));
-      const t=setInterval(()=>{cur+=step; if(cur>=target){cur=target; clearInterval(t);} el.textContent=cur.toLocaleString();},20);
-      cio.unobserve(el);
-    }
-  });
-},{threshold:.5});
-counters.forEach(c=>cio.observe(c));
-
-/* card tilt */
-document.querySelectorAll('.tilt').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
-    card.style.transform=`translateY(-4px) rotateX(${-y*6}deg) rotateY(${x*6}deg)`;
-  });
-  card.addEventListener('mouseleave',()=>{card.style.transform='';});
-});
-
-/* ripple */
-document.querySelectorAll('.btn').forEach(btn=>{
-  btn.addEventListener('click',function(e){
-    const r=this.getBoundingClientRect();
-    const s=document.createElement('span'); s.className='ripple';
-    s.style.left=(e.clientX-r.left)+'px'; s.style.top=(e.clientY-r.top)+'px';
-    this.appendChild(s); setTimeout(()=>s.remove(),600);
-  });
-});
-
-/* ================= CHATBOT ================= */
-const chatLog=document.getElementById('chatLog'),chatInput=document.getElementById('chatInput'),chatActions=document.getElementById('chatActions');
-let transcript='';
-const INTENTS=[
-  {k:['treatment','service','offer','ortho','implant','skin','hair','braces'],a:"We offer three tracks: Smile &amp; Orthodontics, Implants &amp; Cosmetic Dentistry, and Skin &amp; Hair Renewal. Which one interests you?"},
-  {k:['cost','price','fee','charge','pricing'],a:"Pricing starts from PKR 8,000 (skin/hair sessions), PKR 15,000+ (orthodontics per phase) and PKR 45,000+ (implants). Final cost is confirmed at your free consultation."},
-  {k:['safe','hygien','sterile','clean'],a:"All instruments are sterilized before every visit, and our specialists are licensed and verified. You're welcome to ask about our sterilization process at your visit."},
-  {k:['book','appointment','consult','slot','schedule'],a:"You can book a free consultation right from the Contact section below, or send us your details on WhatsApp — we'll confirm a slot quickly."},
-  {k:['location','address','where','karachi','nazimabad'],a:"We're located at Shop # 5, Bhayani Garden, Block H, North Nazimabad, Karachi 74600."},
-  {k:['certificat','warranty','guarantee'],a:"Completing your planned visits and aftercare earns you a digital Treatment Completion Certificate, with a warranty card for eligible procedures."},
-  {k:['hour','time','open','close'],a:"We're open Monday–Saturday, 11:00 AM – 8:00 PM (placeholder hours for this demo)."},
-  {k:['pain','hurt'],a:"Most procedures use gentle, modern techniques with anesthesia where needed — your specialist will walk you through what to expect."},
-];
-function botReply(msg){
-  const lower=msg.toLowerCase();
-  const hit=INTENTS.find(i=>i.k.some(kw=>lower.includes(kw)));
-  return hit? hit.a : "Thanks for asking! For anything specific to your case, our specialists can give the best answer during a free consultation — want to book one?";
+// Star dots
+const se=document.getElementById('starsEl');
+for(let i=0;i<55;i++){
+  const s=document.createElement('div');s.className='star-dot';
+  const sz=Math.random()*2+0.5;
+  s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${sz}px;height:${sz}px;--d:${2+Math.random()*5}s;--delay:${Math.random()*6}s;--op:${0.3+Math.random()*0.7}`;
+  se.appendChild(s);
 }
-function addBubble(text,who){
-  chatLog.insertAdjacentHTML('beforeend',`<div class="bubble ${who}">${text}</div>`);
-  chatLog.scrollTop=chatLog.scrollHeight;
-  transcript+=(who==='me'?'Patient: ':'Assistant: ')+text.replace(/<[^>]*>/g,'')+'\n';
+
+// Floating clouds
+const cc=document.getElementById('clouds');
+const cloudData=[
+  {w:300,h:80,top:15,op:0.04,d:35,delay:0},
+  {w:500,h:120,top:30,op:0.03,d:50,delay:8},
+  {w:200,h:60,top:60,op:0.05,d:28,delay:4},
+  {w:400,h:100,top:75,op:0.03,d:42,delay:15},
+];
+cloudData.forEach(cd=>{
+  const c=document.createElement('div');c.className='cloud';
+  c.style.cssText=`width:${cd.w}px;height:${cd.h}px;top:${cd.top}%;left:-${cd.w}px;--op:${cd.op};--d:${cd.d}s;--delay:${cd.delay}s`;
+  cc.appendChild(c);
+});
+
+// Hamburger
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu'),h=document.getElementById('hamburger');
+  m.classList.toggle('open');h.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
-function handleSend(msg){
-  if(!msg.trim()) return;
-  addBubble(msg,'me');
-  setTimeout(()=>{addBubble(botReply(msg),'them'); chatActions.style.display='flex';},400);
-  chatInput.value='';
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow='';
 }
-document.getElementById('chatSend').onclick=()=>handleSend(chatInput.value);
-chatInput.addEventListener('keydown',e=>{if(e.key==='Enter') handleSend(chatInput.value);});
-document.querySelectorAll('.sugg').forEach(b=>b.addEventListener('click',()=>handleSend(b.dataset.q)));
 
-document.getElementById('sendWa').onclick=()=>{
-  const text=encodeURIComponent('Hi, I was chatting with your website assistant:\n\n'+transcript);
-  window.open('https://wa.me/923XXXXXXXXX?text='+text,'_blank');
-};
-const emailModal=document.getElementById('emailModal'),emailText=document.getElementById('emailText'),mailtoBtn=document.getElementById('mailtoBtn');
-document.getElementById('sendEmail').onclick=()=>{
-  emailText.value=transcript;
-  mailtoBtn.href='mailto:hello@thedentalsapphire.demo?subject=Chat%20Enquiry&body='+encodeURIComponent(transcript);
-  emailModal.classList.add('show');
-};
-document.getElementById('closeModal').onclick=()=>emailModal.classList.remove('show');
-document.getElementById('copyEmail').onclick=()=>{navigator.clipboard.writeText(emailText.value);};
-
-/* booking form -> WhatsApp */
-document.getElementById('bookWa').onclick=()=>{
-  const form=document.getElementById('bookForm');
-  const inputs=form.querySelectorAll('input,select,textarea');
-  let msg='New booking request from website demo:\n';
-  const labels=['Name','Phone','Treatment','Preferred Date','','Message'];
-  inputs.forEach((el,i)=>{ if(el.value) msg+=`${labels[i]||'Field'}: ${el.value}\n`; });
-  window.open('https://wa.me/923XXXXXXXXX?text='+encodeURIComponent(msg),'_blank');
-};
-
-/* whatsapp fab */
-document.getElementById('waFab').onclick=(e)=>{
+// Form
+function handleSubmit(e){
   e.preventDefault();
-  window.open('https://wa.me/923XXXXXXXXX?text='+encodeURIComponent('Hi, I found The Dental Sapphire online and would like to know more.'),'_blank');
-};
+  const btn=e.target.querySelector('.btn-submit');
+  btn.textContent='Inquiry Sent ✓';
+  btn.style.background='linear-gradient(135deg,#2a6a4a,#4aaa7a)';
+  setTimeout(()=>{btn.textContent='Send Inquiry →';btn.style.background='';e.target.reset();},3500);
+}
+
+// Entrance animations
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0) scale(1)'}});
+},{threshold:0.07});
+document.querySelectorAll('.spec-card,.g-item,.stat,.contact-info-item,.occasion-card,.lift-item').forEach((el,i)=>{
+  el.style.cssText+=`opacity:0;transform:translateY(30px) scale(0.98);transition:opacity 0.7s ${i*0.06}s ease,transform 0.7s ${i*0.06}s ease`;
+  io.observe(el);
+});
 </script>
 </body>
 </html>
